@@ -22,14 +22,14 @@ RSpec.describe 'Method Exercises' do
   describe 'common sports exercise using #intersection' do
 
     it 'returns the common sports' do
-      current = ['tennis', 'football', 'baseball']
-      favorite = ['baseball', 'tennis', 'basketball']
-      expect(common_sports(current, favorite)).to eq(['tennis', 'baseball'])
+      current  = %w[tennis football baseball]
+      favorite = %w[baseball tennis basketball]
+      expect(common_sports(current, favorite)).to eq(%w[tennis baseball])
     end
 
     it 'returns an empty array when there are no common sports' do
-      current = ['tennis', 'football', 'wrestling']
-      favorite = ['baseball', 'basketball']
+      current  = %w[tennis football wrestling]
+      favorite = %w[baseball basketball]
       expect(common_sports(current, favorite)).to eq([])
     end
   end
@@ -37,8 +37,8 @@ RSpec.describe 'Method Exercises' do
   describe 'alphabetical list exercise using #sort and #uniq chained' do
 
     it 'returns an sorted array removing one duplicate' do
-      games = ['Chess', 'Scrabble', 'Othello', 'Chess']
-      expect(alphabetical_list(games)).to eq(['Chess', 'Othello', 'Scrabble'])
+      games = %w[Chess Scrabble Othello Chess]
+      expect(alphabetical_list(games)).to eq(%w[Chess Othello Scrabble])
     end
 
     it 'returns an sorted array removing multiple duplicates' do
